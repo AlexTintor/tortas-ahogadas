@@ -1,11 +1,7 @@
 const express = require("express");
-//const Stripe = require("stripe");
 
-// ⚠️ Pon aquí tu Secret Key de Stripe (sk_test_...)
-//const stripe = Stripe("sk_test_51S1tIuGR9Ku22KmuaJj0Cn2XbU31vAghrfEms5v9A48LbRMCUStcefYXKalK3TiZHSAyyhGQIwnkmsX2q99NsgFc009oV7QTCu");
-const stripe = require("stripe")("sk_test_51S1tIuGR9Ku22KmuaJj0Cn2XbU31vAghrfEms5v9A48LbRMCUStcefYXKalK3TiZHSAyyhGQIwnkmsX2q99NsgFc009oV7QTCu");
-
-
+// ⚠️ Usar variable de entorno para seguridad
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 
@@ -31,8 +27,8 @@ app.post("/checkout", async (req, res) => {
           quantity: 1,
         },
       ],
-      success_url: "http://localhost:3000/success.html",
-      cancel_url: "http://localhost:3000/cancel.html",
+      success_url: "https://tortas-ahogadas.onrender.com/success.html",
+      cancel_url: "https://tortas-ahogadas.onrender.com/cancel.html",
     });
 
     res.json({ url: session.url });
@@ -42,5 +38,6 @@ app.post("/checkout", async (req, res) => {
   }
 });
 
-// Iniciar servidor
-app.listen(3000, () => console.log("Servidor corriendo en http://localhost:3000"));
+// Puerto dinámico para Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
