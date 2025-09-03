@@ -1,1 +1,224 @@
-<h1>¡Pago exitoso! Tu torta va en camino 🍞🌊</h1>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Pago Exitoso! - TortaExpress</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .success-container {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        .success-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .success-title {
+            font-size: 2em;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .order-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .detail-label {
+            color: #666;
+        }
+
+        .detail-value {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .estimated-time {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .back-button {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .success-container {
+                padding: 30px 20px;
+            }
+
+            .success-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-container">
+        <div class="success-icon">✅</div>
+        <h1 class="success-title">¡Pago Exitoso!</h1>
+        <p class="success-message">
+            Tu pedido ha sido confirmado y procesado exitosamente.
+            ¡Gracias por elegir TortaExpress!
+        </p>
+
+        <div class="order-details">
+            <div class="detail-row">
+                <span class="detail-label">Producto:</span>
+                <span class="detail-value">Torta Ahogada Tradicional</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Precio:</span>
+                <span class="detail-value">$50.00 MXN</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Estado:</span>
+                <span class="detail-value" style="color: #28a745;">✓ Confirmado</span>
+            </div>
+        </div>
+
+        <div class="estimated-time">
+            🕐 Tiempo estimado de preparación: 5-10 minutos
+        </div>
+
+        <p style="color: #666; font-size: 0.9em; margin: 20px 0;">
+            Recibirás tu torta ahogada en nuestra máquina expendedora.
+            <br><strong>¡Disfruta tu deliciosa torta!</strong>
+        </p>
+
+        <a href="/" class="back-button">🌮 Hacer Otro Pedido</a>
+    </div>
+
+    <script>
+        // Auto redirect después de 30 segundos
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 30000);
+        
+        // Confetti effect (opcional)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simple confetti effect with emojis
+            for (let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+        });
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.innerHTML = ['🎉', '🌮', '✨', '🎊', '⭐'][Math.floor(Math.random() * 5)];
+            confetti.style.position = 'fixed';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.top = '-10px';
+            confetti.style.fontSize = Math.random() * 20 + 10 + 'px';
+            confetti.style.pointerEvents = 'none';
+            confetti.style.zIndex = '1000';
+            confetti.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            document.body.appendChild(confetti);
+            
+            const animation = confetti.animate([
+                { transform: 'translateY(-10px) rotate(0deg)' },
+                { transform: `translateY(100vh) rotate(${Math.random() * 360}deg)` }
+            ], {
+                duration: Math.random() * 2000 + 3000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => confetti.remove();
+        }
+    </script>
+</body>
+
+</html>

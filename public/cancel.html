@@ -1,1 +1,260 @@
-<h1>Pago cancelado ❌</h1>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Cancelado - TortaExpress</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #dc3545, #fd7e14);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cancel-container {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .cancel-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .cancel-title {
+            font-size: 2em;
+            color: #dc3545;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .cancel-message {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .reasons-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .reasons-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .reason-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .reason-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .support-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .retry-button {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .home-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .retry-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(108, 117, 125, 0.3);
+            background: #5a6268;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cancel-container {
+                padding: 30px 20px;
+            }
+
+            .cancel-title {
+                font-size: 1.5em;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+            }
+
+            .retry-button,
+            .home-button {
+                min-width: auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cancel-container">
+        <div class="cancel-icon">❌</div>
+        <h1 class="cancel-title">Pago Cancelado</h1>
+        <p class="cancel-message">
+            No te preocupes, tu pago ha sido cancelado y no se realizó ningún cargo.
+            Tu torta ahogada te está esperando.
+        </p>
+
+        <div class="reasons-list">
+            <div class="reasons-title">¿Qué pudo haber pasado?</div>
+            <div class="reason-item">
+                <span class="reason-icon">💳</span>
+                <span>Cambio de método de pago</span>
+            </div>
+            <div class="reason-item">
+                <span class="reason-icon">🤔</span>
+                <span>Decidiste pensarlo mejor</span>
+            </div>
+            <div class="reason-item">
+                <span class="reason-icon">📱</span>
+                <span>Problema técnico temporal</span>
+            </div>
+            <div class="reason-item">
+                <span class="reason-icon">⏰</span>
+                <span>Se agotó el tiempo de pago</span>
+            </div>
+        </div>
+
+        <div class="support-info">
+            <strong>💡 ¿Necesitas ayuda?</strong><br>
+            Si tuviste algún problema técnico, no dudes en intentarlo de nuevo.
+            Todos tus datos están seguros.
+        </div>
+
+        <div class="buttons-container">
+            <a href="/" class="retry-button">🌮 Intentar de Nuevo</a>
+            <a href="/" class="home-button">🏠 Inicio</a>
+        </div>
+
+        <p style="color: #999; font-size: 0.9em; margin-top: 20px;">
+            Auto-redirección en <span id="countdown">15</span> segundos...
+        </p>
+    </div>
+
+    <script>
+        // Countdown timer
+        let timeLeft = 15;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = '/';
+            }
+        }, 1000);
+        
+        // Allow user to click to stop countdown
+        document.querySelector('.cancel-container').addEventListener('click', () => {
+            clearInterval(timer);
+            countdownElement.textContent = '∞';
+        });
+    </script>
+</body>
+
+</html>
