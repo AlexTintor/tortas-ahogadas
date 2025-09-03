@@ -1,0 +1,17 @@
+{
+  "name": "web-exfood",
+  "version": "1.0.0",
+  "description": "Sitio web para venta de tortas ahogadas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "stripe": "^18.5.0"
+  }
+}
