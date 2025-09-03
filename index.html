@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tortas Ahogadas</title>
+</head>
+
+<body>
+    <h1>Compra tu Torta Ahogada</h1>
+    <button id="comprar">Comprar</button>
+
+    <script>
+        document.getElementById("comprar").addEventListener("click", async () => {
+            try {
+                const resp = await fetch("/checkout", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({}) // aunque esté vacío
+                });
+                const data = await resp.json();
+                window.location.href = data.url; // Redirige a Stripe Checkout
+            } catch (err) {
+                console.error("Error al iniciar el pago:", err);
+                alert("Ocurrió un error al procesar el pago.");
+            }
+        });
+    </script>
+</body>
+
+</html>
